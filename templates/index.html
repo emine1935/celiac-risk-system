@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Çölyak Risk Analiz Sistemi</title>
+<head>
+    <title>Çölyak Risk Analiz Sistemi</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<h1>Çölyak Risk Analiz Sistemi</h1>
+
+<form action="/predict" method="POST">
+
+    <label>Yaş:</label>
+    <br>
+    <input type="number" name="age" required>
+    
+    <br><br>
+
+    <label>Karın Ağrısı Var mı?</label>
+    <br>
+
+    <select name="pain">
+        <option value="1">Evet</option>
+        <option value="0">Hayır</option>
+    </select>
+
+    <br><br>
+
+    <label>İshal Var mı?</label>
+    <br>
+
+    <select name="diarrhea">
+        <option value="1">Evet</option>
+        <option value="0">Hayır</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit">
+        Risk Analizi Yap
+    </button>
+
+</form>
+
+</body>
+</html>

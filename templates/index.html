@@ -2,48 +2,42 @@
 <html>
 <head>
     <title>Çölyak Risk Analiz Sistemi</title>
-<head>
-    <title>Çölyak Risk Analiz Sistemi</title>
+
     <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/style.css') }}">
+    href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-<h1>Çölyak Risk Analiz Sistemi</h1>
+<div class="container">
 
-<form action="/predict" method="POST">
+    <h1>Çölyak Risk Analiz Sistemi</h1>
 
-    <label>Yaş:</label>
-    <br>
-    <input type="number" name="age" required>
-    
-    <br><br>
+    <p>Belirtilerinizi girerek risk analizi yapın.</p>
 
-    <label>Karın Ağrısı Var mı?</label>
-    <br>
+    <form action="/predict" method="POST">
 
-    <select name="pain">
-        <option value="1">Evet</option>
-        <option value="0">Hayır</option>
-    </select>
+        <label>Yaş</label>
+        <input type="number" name="age" required>
 
-    <br><br>
+        <label>Karın Ağrısı Var mı?</label>
+        <select name="pain">
+            <option value="1">Evet</option>
+            <option value="0">Hayır</option>
+        </select>
 
-    <label>İshal Var mı?</label>
-    <br>
+        <label>İshal Var mı?</label>
+        <select name="diarrhea">
+            <option value="1">Evet</option>
+            <option value="0">Hayır</option>
+        </select>
 
-    <select name="diarrhea">
-        <option value="1">Evet</option>
-        <option value="0">Hayır</option>
-    </select>
+        <button type="submit">
+            Risk Analizi Yap
+        </button>
 
-    <br><br>
+    </form>
 
-    <button type="submit">
-        Risk Analizi Yap
-    </button>
-
-</form>
+</div>
 
 </body>
 </html>

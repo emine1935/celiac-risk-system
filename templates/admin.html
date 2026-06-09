@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yönetici Paneli</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container" style="width:900px;">
+
+    <h1>Yönetici Paneli</h1>
+
+    <div class="toplam">
+        Toplam Analiz Sayısı: {{ toplam }}
+    </div>
+
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Yaş</th>
+            <th>Risk</th>
+        </tr>
+
+        {% for kayit in kayitlar %}
+
+        <tr>
+            <td>{{ kayit[0] }}</td>
+            <td>{{ kayit[1] }}</td>
+            <td>%{{ kayit[4] }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>

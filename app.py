@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
+import sqlite3
 
 app = Flask(__name__)
+
 
 @app.route("/")
 def ana_sayfa():
@@ -25,9 +27,43 @@ def predict():
     if age < 30:
         risk += 20
 
+    # Veritabanına kayıt
+    conn = sqlite3.connect("celiac.db")
+    cursor = conn.cursor()
+
+    cursor.execute("""
+    INSERT INTO analizler
+    (yas, karin_agrisi, ishal, risk)
+    VALUES (?, ?, ?, ?)
+    """, (age, pain, diarrhea, risk))
+
+    conn.commit()
+    conn.close()
+
     return render_template(
         "result.html",
         risk=risk
+    )
+
+
+@app.route("/admin")
+def admin():
+
+    conn = sqlite3.connect("celiac.db")
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM analizler")
+
+    kayitlar = cursor.fetchall()
+
+    toplam = len(kayitlar)
+
+    conn.close()
+
+    return render_template(
+        "admin.html",
+        kayitlar=kayitlar,
+        toplam=toplam
     )
 
 

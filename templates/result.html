@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sonuç</title>
-<head>
-    <title>Sonuç</title>
+    <title>Risk Sonucu</title>
 
     <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/style.css') }}">
+    href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-<h1>Analiz Sonucu</h1>
+<div class="container">
 
-<h2>Risk Oranı: %{{ risk }}</h2>
+    <h1>Analiz Sonucu</h1>
 
-<a href="/">Yeni Analiz</a>
+    <div class="result-box">
+
+        <p>Çölyak Hastalığı Risk Oranı</p>
+
+        <div class="risk">
+            %{{ risk }}
+        </div>
+
+    </div>
+
+    <br>
+
+    <a href="/">
+        Yeni Analiz Yap
+    </a>
+
+</div>
 
 </body>
 </html>

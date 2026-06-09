@@ -8,19 +8,30 @@
 </head>
 <body>
 
-<div class="container" style="width:900px;">
+<div class="container" style="width:95%;">
 
-    <h1>Yönetici Paneli</h1>
+    <h1>Çölyak Karar Destek Sistemi</h1>
 
     <div class="toplam">
         Toplam Analiz Sayısı: {{ toplam }}
     </div>
 
-    <table>
+    <br>
+
+    <table border="1">
 
         <tr>
             <th>ID</th>
             <th>Yaş</th>
+            <th>Cinsiyet</th>
+            <th>Karın Ağrısı</th>
+            <th>Diyare</th>
+            <th>Kilo Kaybı</th>
+            <th>IgA</th>
+            <th>tTG-IgA</th>
+            <th>EMA</th>
+            <th>HLA</th>
+            <th>Anemi</th>
             <th>Risk</th>
         </tr>
 
@@ -29,7 +40,16 @@
         <tr>
             <td>{{ kayit[0] }}</td>
             <td>{{ kayit[1] }}</td>
-            <td>%{{ kayit[4] }}</td>
+            <td>{{ kayit[2] }}</td>
+            <td>{{ kayit[3] }}</td>
+            <td>{{ kayit[4] }}</td>
+            <td>{{ kayit[5] }}</td>
+            <td>{{ kayit[6] }}</td>
+            <td>{{ kayit[7] }}</td>
+            <td>{{ kayit[8] }}</td>
+            <td>{{ kayit[9] }}</td>
+            <td>{{ kayit[10] }}</td>
+            <td>%{{ kayit[11] }}</td>
         </tr>
 
         {% endfor %}

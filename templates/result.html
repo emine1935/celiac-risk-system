@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Risk Sonucu</title>
+    <title>Analiz Sonucu</title>
 
     <link rel="stylesheet"
     href="{{ url_for('static', filename='css/style.css') }}">
@@ -14,11 +14,23 @@
 
     <div class="result-box">
 
-        <p>Çölyak Hastalığı Risk Oranı</p>
+        <h2>Risk Oranı</h2>
 
         <div class="risk">
             %{{ risk }}
         </div>
+
+    </div>
+
+    <br>
+
+    <div class="result-box">
+
+        <h2>Öneri</h2>
+
+        <p style="white-space: pre-line;">
+            {{ oneri }}
+        </p>
 
     </div>
 
